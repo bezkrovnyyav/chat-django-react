@@ -10,20 +10,20 @@
  **7.**  [ ] користувачі мають бачити, коли хтось набирає текст; 
  **8.** [ ] відображати дату й час біля кожного повідомлення; 
  **9.** [ ] ім'я користувача залишається після вкладки, що закривається.
- 
+
 ---
 **Start project**:
 ---
  **1.** In the first console:
- 	 `Open chat-django-react`
-	 `python -m venv env`
-	 `env\Scripts\activate`
-	 `pip install -r requirements.txt`
-    Open backend directory via `--> cd backend` 
-    `python manage.py migrate `
-   `python manage.py makemigrations `
-   `python manage.py runserver`
-   For create admin --> `python manage.py createsuperuser`
+ - `Open chat-django-react`
+ - `python -m venv env`
+ - `env\Scripts\activate`
+ - `pip install -r requirements.txt`
+ - Open backend directory via `--> cd backend` 
+ - `python manage.py migrate `
+ - `python manage.py makemigrations `
+ - `python manage.py runserver`
+ - For create admin --> `python manage.py createsuperuser`
 ---
 **2.** In the second console:
  - Open frontend directory via `--> cd frontend` 
