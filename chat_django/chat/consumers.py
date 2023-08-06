@@ -7,7 +7,6 @@ import json
 
 class JoinAndLeave(WebsocketConsumer):
 	def connect(self):
-		print("Connected!")
 		self.room_uuid = self.scope['url_route']['kwargs']['uuid']
 		self.room_group_name = f'chat_{self.room_uuid}'
 
@@ -32,7 +31,6 @@ class JoinAndLeave(WebsocketConsumer):
 		)
 
 	def disconnect(self, close_code):
-		print("Disconnected!")
 		async_to_sync(self.channel_layer.group_discard)(
 		    self.room_group_name, self.channel_name
 		)
