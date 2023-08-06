@@ -29,12 +29,23 @@ ALLOWED_HOSTS = ['*']
 
 ASGI_APPLICATION = 'django_chat.asgi.application'
 
-
+# Without Redis
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels.layers.InMemoryChannelLayer'
     }
 }
+
+# Redis
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [('localhost', 6379)],
+#         },
+#     },
+# }
 
 # Application definition
 
