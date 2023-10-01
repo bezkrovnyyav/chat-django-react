@@ -6,7 +6,11 @@ User = get_user_model()
 
 class Group(models.Model):
 	uuid = models.UUIDField(default=uuid4, editable=False)
+	chatname = models.CharField(blank=False, max_length=50)
 	members = models.ManyToManyField(User)
+
+	def __str__(self):
+		return self.chatname
 
 	def add_user(request, user):
 		self.members.add(user)

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Group
 
 
@@ -11,11 +12,18 @@ def home(request):
 
 @login_required
 def new_group(request):
-	u = request.user
-	new = Group.objects.create()
-	new.members.add(u)
-	new.save()
-	return redirect('home')
+	if request.method == 'POST':
+		chatname = request.POST['chatname']		
+		u = request.user
+		new = Group.objects.create(chatname=chatname)
+		new.members.add(u)
+		new.chatname.add(chatname)
+		new.save()
+
+		return redirect('home')
+	else:
+		messages.error(request, 'Here is error.')
+		return render(request, 'home.html')
 
 
 @login_required
