@@ -12,12 +12,12 @@ class Group(models.Model):
 	def __str__(self):
 		return self.chatname
 
-	def add_user(request, user):
+	def add_user(self, request, user):
 		self.members.add(user)
 		self.save()
 		return
 
-	def remove_user(request, user):
+	def remove_user(self, request, user):
 		self.members.remove(user)
 		self.save()
 		return
