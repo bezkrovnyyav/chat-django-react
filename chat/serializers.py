@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Group
+from .models import Group, Message
 
 
 class GroupSerializer(serializers.ModelSerializer):
@@ -11,5 +11,5 @@ class GroupSerializer(serializers.ModelSerializer):
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
+        model = Message
         fields = ['id','author', 'timestamp', 'content', 'group']
