@@ -26,7 +26,7 @@ class Group(models.Model):
 
 class Message(models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-	timestamp = models.DateTimeField(auto_now_add=True)
+	timestamp = models.CharField(max_length=255, blank=True, null=True)
 	content = models.TextField()
 	group = models.ForeignKey(Group, on_delete=models.CASCADE)
 
