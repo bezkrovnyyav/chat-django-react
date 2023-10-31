@@ -30,4 +30,5 @@ class Message(models.Model):
 	content = models.TextField()
 	group = models.ForeignKey(Group, on_delete=models.CASCADE)
 
-
+	def __str__(self):
+		return self.author.username 

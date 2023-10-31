@@ -10,6 +10,9 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class MessageSerializer(serializers.ModelSerializer):
+    author = serializers.StringRelatedField()  # display author name
+    author_id = serializers.IntegerField()  # display author id
+
     class Meta:
         model = Message
-        fields = ['id','author', 'timestamp', 'content', 'group']
+        fields = ['author', 'author_id', 'timestamp', 'content', 'group']
