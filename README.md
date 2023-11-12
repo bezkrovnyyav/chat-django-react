@@ -30,7 +30,7 @@
  - `pip install -r requirements.txt`
  - Open backend directory via `--> cd backend` 
  - `python manage.py makemigrations `
- - `python manage.py migrate `
+ - `python manage.py migrate members && python manage.py migrate`
  - `python manage.py runserver`
  - For create admin --> `python manage.py createsuperuser`
 ---
