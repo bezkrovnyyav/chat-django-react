@@ -3,6 +3,7 @@ from uuid import uuid4
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 
+
 User = get_user_model()
 
 class Group(models.Model):
